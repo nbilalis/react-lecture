@@ -1,21 +1,28 @@
 import { Route, Routes } from 'react-router-dom';
 
-import ThemeProvider from './store/ThemeProvider';
-
 import About from './views/About';
 import Home from './views/Home';
-import Layout from './views/Layout';
+import Details from './views/pokemon/Details';
+import Index from './views/pokemon/Index';
+import List from './views/pokemon/List';
+
+import Header from './components/Header';
+
+import './App.scss';
 
 function App() {
   return (
-    <ThemeProvider>
+    <>
+      <Header />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/pokemon" element={<Index />}>
+          <Route index element={<List />} />
+          <Route path=":name" element={<Details />} />
         </Route>
       </Routes>
-    </ThemeProvider>
+    </>
   );
 }
 

@@ -9,7 +9,7 @@ function Header() {
     <header>
       <div id="wrapper">
         <svg id="logo" data-src={logo} />
-        <span id="title">React - Vite - TypeScript template</span>
+        <span id="title">Pokémon</span>
       </div>
       <Menu />
     </header>
